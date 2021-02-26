@@ -3,18 +3,23 @@ import ExperienceBar from '../components/ExperienceBar';
 import Profile from '../components/Profile';
 import CompletedChallenges from '../components/CompletedChallenges';
 import CountDown from '../components/CountDown';
-
 import styles from '../styles/pages/Home.module.css';
+import ChallengeBox from '../components/ChallengeBox';
+import { useContext } from 'react';
+import { ChallengeContext } from '../contexts/ChanllengesContext';
 
 export default function Home() {
+  const { currentExperience, experienceToNextLevel } = useContext(ChallengeContext);
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Início | MoveIt</title>
       </Head>
+
       <ExperienceBar 
-        maxScore={600}
-        currenteScore={300}        
+        currenteScore={currentExperience}        
+        maxScore={experienceToNextLevel}
       />
 
       <section>
@@ -28,11 +33,11 @@ export default function Home() {
           <CompletedChallenges />
 
           <CountDown
-            intialTimeInSeconds={25 * 60}
+            intialTimeInSeconds={0.1 * 60}
           />
         </div>
         <div>
-
+          <ChallengeBox />
         </div>
       </section>
 
