@@ -7,9 +7,10 @@ import styles from '../styles/pages/Home.module.css';
 import ChallengeBox from '../components/ChallengeBox';
 import { useContext } from 'react';
 import { ChallengeContext } from '../contexts/ChanllengesContext';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 export default function Home() {
-  const { currentExperience, experienceToNextLevel } = useContext(ChallengeContext);
+  const { currentExperience, experienceToNextLevel, level } = useContext(ChallengeContext);
 
   return (
     <div className={styles.container}>
@@ -22,24 +23,26 @@ export default function Home() {
         maxScore={experienceToNextLevel}
       />
 
-      <section>
-        <div>
-          <Profile 
-            name="Caio Eduardo"
-            urlAvatar="https://github.com/cersouza.png"
-            level={5}
-          />
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile 
+              name="Caio Eduardo"
+              urlAvatar="https://github.com/cersouza.png"
+              level={level}
+            />
 
-          <CompletedChallenges />
+            <CompletedChallenges />
 
-          <CountDown
-            intialTimeInSeconds={0.1 * 60}
-          />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+            <CountDown
+              intialTimeInSeconds={25 * 60}
+            />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
 
     </div>
   )
