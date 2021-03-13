@@ -18,9 +18,14 @@ function ExperienceBar(props: ExperienceBarProps) {
             <span>{ props.minScore || 0 } px</span>
             <div>
                 <div style={{ width: getCurrentScorePercent() }} />
-                <span className={styles.currentExperience} style={{ left: getCurrentScorePercent()}}>
-                    { props.currenteScore } px
-                </span>
+               
+                {                 
+                    props.currenteScore > 0 
+                    &&
+                    <span className={styles.currentExperience} style={{ left: getCurrentScorePercent()}}>
+                        { props.currenteScore } px
+                    </span>
+                }
             </div>
             <span>{ props.maxScore } px</span>
         </header>

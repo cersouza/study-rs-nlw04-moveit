@@ -26,6 +26,15 @@
     line-height: 1.4;
 }
 
+.challengeNotActive strong a {
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.challengeNotActive strong a:hover {
+    color: var(--blue-dark);
+}
+
 .challengeNotActive p {
     display: flex;
     flex-direction: column;

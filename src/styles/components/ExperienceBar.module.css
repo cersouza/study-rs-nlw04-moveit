@@ -26,5 +26,6 @@
     position: absolute;
     top: 12px;
     transform: translateX(-50%);
+    max-width: 300px;
 }
 

@@ -1,0 +1,21 @@
+.footerPageContainer { 
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.footerPageContainer a {
+    font-weight: 600;
+}
+
+.footerPageContainer a:first-child {
+    color: var(--blue);
+}
+
+
+.footerPageContainerLight {
+    color: var(--blue-ligth);
+}
+
+.footerPageContainerLight a {
+    color: var(--white);
+}

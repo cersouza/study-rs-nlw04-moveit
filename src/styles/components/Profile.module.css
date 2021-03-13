@@ -3,7 +3,14 @@
     align-items: center;
 }
 
-.profileContainer > img {
+.profileContainer .avatarContainer {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    background: var(--gray-line);
+} 
+
+.profileContainer .avatarContainer > img {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
@@ -26,4 +33,29 @@
 
 .profileContainer div p img {
     margin-right: 0.5rem;
+}
+
+.profileContainer div strong {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.profileContainer div strong a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: filter 0.2s;
+}
+
+.profileContainer div strong a:hover{
+    filter: brightness(0.7);
+}
+
+.profileContainer div strong a img {
+    height: 1.3rem;
+    width: auto;
+    cursor: pointer;
+    margin-left: 0.5rem;
 }
