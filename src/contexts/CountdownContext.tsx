@@ -39,8 +39,8 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
             setHasFinished(true);
             startNewChallenge();
         }
-    }, [isActive, time])
-
+    }, [isActive, time]);
+    
     function resetCountDown() {
         setIsActive(false);
         setHasFinished(false);
