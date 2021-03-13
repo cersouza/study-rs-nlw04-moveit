@@ -6,7 +6,7 @@
 
 ## 1. Sobre
 
-Baseado nas práticas de foco concentração do Pomodoro o *MoveIt*, através de notificações em períodos de tempo lança exercícios (nossos desafios) a serem executados.
+Baseado nas boas práticas de foco concentração da metodologia _Pomodoro_ o **MoveIt**, através de notificações em períodos de tempo lança exercícios (nossos desafios) a serem executados.
 
 #### 1.3. Contexto do Projeto:
 
