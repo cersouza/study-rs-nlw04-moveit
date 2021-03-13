@@ -8,13 +8,14 @@ import ChallengeBox from '../components/ChallengeBox';
 import FooterPage from '../components/FooterPage';
 import { useContext, useEffect } from 'react';
 import { ChallengeContext } from '../contexts/ChanllengesContext';
-import { CountdownProvider } from '../contexts/CountdownContext';
+import { CountdownContext } from '../contexts/CountdownContext';
 import { UserContext } from '../contexts/UserContext';
 import { useRouter } from 'next/router';
 
 export default function Challenge() {
   const { currentExperience, experienceToNextLevel, level } = useContext(ChallengeContext);
   const { name, username, profileImageUrl } = useContext(UserContext);
+  const countDown = useContext(CountdownContext);
   const router = useRouter(); 
 
   useEffect(() => {   
@@ -27,7 +28,11 @@ export default function Challenge() {
   return username && (
     <div className={styles.container}>
       <Head>
-        <title>Início | MoveIt</title>
+        { countDown.isActive ? 
+          <title>MoveIt | { `${countDown.minutes.toString().padStart(2, '0')}:${countDown.seconds.toString().padStart(2, '0')}` } </title>
+        :
+          <title>Início | MoveIt</title>
+        }
       </Head>
 
       <ExperienceBar 
@@ -35,7 +40,6 @@ export default function Challenge() {
         maxScore={experienceToNextLevel}
       />
 
-      <CountdownProvider>
         <section>
           <div>
             <Profile 
@@ -54,8 +58,7 @@ export default function Challenge() {
           <div>
             <ChallengeBox />
           </div>
-        </section>
-      </CountdownProvider>     
+        </section>  
       <FooterPage />
     </div>
   )
