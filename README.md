@@ -8,6 +8,8 @@
 
 Baseado nas boas práticas de foco concentração da metodologia _Pomodoro_ o **MoveIt**, através de notificações em períodos de tempo lança exercícios (nossos desafios) a serem executados.
 
+🌐 Acesse o aplicativo: https://cersouza-moveit.vercel.app
+
 #### 1.3. Contexto do Projeto:
 
 Projeto desenvolvido durante a #NLW04 da [RocketSeat](https://rocketseat.com.br).
@@ -18,6 +20,7 @@ Projeto desenvolvido durante a #NLW04 da [RocketSeat](https://rocketseat.com.br)
 - Integração com GitHub;
 - Possibilidade de gerar novo desafio sobre demanda;
 - Reinício automático do relógio de contagem regressiva;  
+- Contagem regressiva no Title da página;
 
 #### 1.2. Tecnologias:
 
